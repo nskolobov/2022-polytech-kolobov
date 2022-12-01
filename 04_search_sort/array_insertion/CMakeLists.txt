@@ -1,5 +1,14 @@
-cmake_minimum_required(VERSION 3.1...3.24)
-project(ArrayInsertion
-        VERSION 1.0
-        LANGUAGES CXX)
-add_executable(array-insertion array-insertion.cpp)
+cmake_minimum_required(VERSION 3.5)
+
+project(array_insertion LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if (CMAKE_SYSTEM_NAME MATCHES "^MINGW")
+    set(SYSTEM_LIBS -lstdc++)
+else()
+    set(SYSTEM_LIBS)
+endif()
+
+add_executable(array_insertion main.cpp)
