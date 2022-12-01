@@ -1,5 +1,14 @@
-cmake_minimum_required(VERSION 3.1...3.24)
-project(BinarySearch
-        VERSION 1.0
-        LANGUAGES CXX)
-add_executable(binary_search binary_search.cpp)
+cmake_minimum_required(VERSION 3.5)
+
+project(bynary LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if (CMAKE_SYSTEM_NAME MATCHES "^MINGW")
+    set(SYSTEM_LIBS -lstdc++)
+else()
+    set(SYSTEM_LIBS)
+endif()
+
+add_executable(bynary main.cpp)
