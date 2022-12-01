@@ -1,4 +1,15 @@
-cmake_minimum_required(VERSION 3.1...3.24)
-project(LBSearchComparison)
-add_executable(linear_search linear_search.cpp)
-add_executable(binary_search binary_search.cpp)
+cmake_minimum_required(VERSION 3.5)
+
+project(intro LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if (CMAKE_SYSTEM_NAME MATCHES "^MINGW")
+    set(SYSTEM_LIBS -lstdc++)
+else()
+    set(SYSTEM_LIBS)
+endif()
+
+add_executable(intro main.cpp)
+
